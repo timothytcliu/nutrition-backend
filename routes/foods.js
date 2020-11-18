@@ -7,8 +7,6 @@ const foodData = require('../food_data.json');
 
 // type array object
 const foodList = foodData.report.foods;
-// const test = foodList[0].nutrients[1].value;
-// console.log(typeof test);
 
 /* GET foods list.
  * By default, .get will return 404 error if queryMiddleware is bypassed.
@@ -31,7 +29,6 @@ function queryMiddleware(req, res, next) {
   const nutrient = parseInt(req.query.nutrient);
   const minValue = parseFloat(req.query.min);
   const maxValue = parseFloat(req.query.max);
-  console.log(nutrient, minValue, maxValue);
 
   // values from foodList are parsed into numbers before comparing w/ minValue and maxValue
   let filteredFoods = foodList.filter(
